@@ -1,138 +1,479 @@
 <!DOCTYPE html>
-class="section hidden"
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>M Buge Munawar | Geophysics Engineer</title>
-<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
+z-index:1000;
+border-bottom:1px solid #222;
+}
+
+.nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+color:#f5b301;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#f5b301;
+}
+
+/* HERO */
+
+.hero{
+max-width:1200px;
+margin:auto;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:80px;
+padding:120px 30px 50px;
+}
+
+.hero-text{
+flex:1;
+}
+
+.hero-text span{
+color:#f5b301;
+font-size:18px;
+}
+
+.hero-text h1{
+font-size:65px;
+line-height:1.1;
+margin:10px 0;
+}
+
+.hero-text h2{
+color:#f5b301;
+font-size:30px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+color:#bfbfbf;
+line-height:1.8;
+max-width:600px;
+}
+
+.hero-buttons{
+margin-top:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+margin-right:10px;
+transition:.3s;
+}
+
+.btn-gold{
+background:#f5b301;
+color:black;
+}
+
+.btn-outline{
+border:2px solid #f5b301;
+color:#f5b301;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.hero-image{
+flex:0 0 320px;
+display:flex;
+justify-content:center;
+}
+
+.hero-image img{
+width:260px;
+height:260px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid #f5b301;
+box-shadow:0 0 40px rgba(245,179,1,.5);
+animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+/* SECTION */
+
+.section{
+max-width:1200px;
+margin:auto;
+padding:100px 30px;
+}
+
+.section-title{
+font-size:40px;
+margin-bottom:40px;
+color:#f5b301;
+text-align:center;
+}
+
+/* ABOUT */
+
+.about{
+background:#111;
+border:1px solid #222;
+padding:35px;
+border-radius:20px;
+line-height:1.9;
+color:#d5d5d5;
+}
+
+/* PROJECT */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.card{
+background:#111;
+border:1px solid #222;
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(245,179,1,.2);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card-content h3{
+margin-bottom:10px;
+color:#f5b301;
+}
+
+.card-content p{
+color:#c8c8c8;
+line-height:1.7;
+}
+
+/* SKILLS */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+}
+
+.skills span{
+padding:12px 18px;
+background:#111;
+border:1px solid #f5b301;
+border-radius:50px;
+}
+
+/* CONTACT */
+
+.contact{
+background:#111;
+border:1px solid #222;
+padding:40px;
+border-radius:20px;
+text-align:center;
+}
+
+.contact p{
+margin:12px 0;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+margin-top:50px;
+border-top:1px solid #222;
+}
+
+/* SCROLL ANIMATION */
+
+.hidden{
+opacity:0;
+transform:translateY(50px);
+transition:all 1s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+gap:40px;
+}
+
+.hero-text h1{
+font-size:45px;
+}
+
+.hero-image img{
+width:220px;
+height:220px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
-    <div class="container nav">
-        <h2>M Buge Munawar</h2>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </div>
+<div class="nav">
+<div class="logo">MB</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
 </header>
 
 <section class="hero">
-    <div class="container hero-content">
 
-        <div class="hero-text">
-            <h1>Geophysics Engineer</h1>
-            <p>
-                Fresh Graduate of Geophysical Engineering from Institut Teknologi Sumatera (ITERA)
-                with experience in Electrical Resistivity Tomography (ERT), Gravity Method,
-                Remote Sensing, and Geophysical Data Processing.
-            </p>
+<div class="hero-text">
 
-            <a href="cv.pdf" target="_blank" class="btn">
-                Download CV
-            </a>
-        </div>
+<span>Hello, I'm</span>
 
-        <div class="hero-image">
-            <img src="profile.jpg" alt="M Buge Munawar">
-        </div>
+<h1>M Buge Munawar</h1>
 
-    </div>
+<h2>Geophysics Engineer</h2>
+
+<p>
+Geophysics graduate from Institut Teknologi Sumatera (ITERA)
+with experience in Electrical Resistivity Tomography (ERT),
+Gravity & Magnetic Survey, Geological Mapping,
+Remote Sensing, and Geophysical Data Processing.
+</p>
+
+<div class="hero-buttons">
+
+<a href="cv.pdf" class="btn btn-gold" target="_blank">
+Download CV
+</a>
+
+<a href="https://www.linkedin.com/in/mbuge/" class="btn btn-outline" target="_blank">
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+<img src="profile.jpg" alt="Profile">
+</div>
+
 </section>
 
-<section id="about" class="section">
-    <div class="container">
-        <h2>About Me</h2>
-        <p>
-            I am a Geophysics Engineer with strong interest in geological hazard investigation,
-            mineral exploration, geotechnical assessment, and geophysical data interpretation.
-            I have experience in field surveys, data processing, inversion modeling, and report preparation.
-        </p>
-    </div>
+<section id="about" class="section hidden">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about">
+
+I am a Geophysics graduate with strong interest in exploration,
+engineering geology, disaster mitigation, and geophysical interpretation.
+Experienced in field surveys, ERT data acquisition,
+gravity and magnetic methods, geological mapping,
+data processing, inversion modelling, and technical reporting.
+
+</div>
+
 </section>
 
-<section id="projects" class="section dark">
-    <div class="container">
-        <h2>Projects</h2>
+<section id="projects" class="section hidden">
 
-        <div class="cards">
+<h2 class="section-title">Featured Projects</h2>
 
-            <div class="card">
-                <img src="ert.jpg" alt="">
-                <h3>ERT Landslide Investigation</h3>
-                <p>
-                    2D Electrical Resistivity Tomography survey for landslide characterization
-                    and slip surface identification.
-                </p>
-            </div>
-            <div class="card">
-                 <img src="gravity.jpg" alt="">
-                 <h3>Gravity & Magnetic Survey</h3>
-                <p> Acquisition, processing, and interpretation of gravity and magnetic data
-        to identify subsurface structures, lithological boundaries, and geological features.
-                </p>
-            </div>
+<div class="cards">
 
+<div class="card">
+<img src="ert.jpg">
+<div class="card-content">
+<h3>ERT Landslide Investigation</h3>
+<p>
+Electrical Resistivity Tomography survey for landslide
+characterization and slip surface identification.
+</p>
+</div>
+</div>
 
+<div class="card">
+<img src="gravity.jpg">
+<div class="card-content">
+<h3>Gravity & Magnetic Survey</h3>
+<p>
+Processing and interpretation of gravity and magnetic data
+for subsurface characterization and geological structure identification.
+</p>
+</div>
+</div>
 
-            <div class="card">
-                <img src="mapping.jpg" alt="">
-                <h3>Geological Mapping</h3>
-                <p>
-                    Geological and geomorphological mapping for subsurface interpretation.
-                </p>
-            </div>
+<div class="card">
+<img src="mapping.jpg">
+<div class="card-content">
+<h3>Geological Mapping</h3>
+<p>
+Geological field mapping and lithological interpretation
+for regional geological analysis.
+</p>
+</div>
+</div>
 
-        </div>
-    </div>
+</div>
+
 </section>
 
-<section id="skills" class="section">
-    <div class="container">
-        <h2>Skills</h2>
+<section id="skills" class="section hidden">
 
-        <div class="skills">
+<h2 class="section-title">Skills</h2>
 
-            <span>Electrical Resistivity Tomography (ERT)</span>
-            <span>RES2DINV</span>
-            <span>Gravity Method</span>
-            <span>Talwani Modeling</span>
-            <span>Remote Sensing</span>
-            <span>GIS</span>
-            <span>Geological Mapping</span>
-            <span>Data Interpretation</span>
-            <span>Microsoft Office</span>
-            <span>Canva</span>
-            <span>Adobe Lightroom</span>
-            <span>Basic Programming</span>
+<div class="skills">
 
-        </div>
-    </div>
+<span>ERT</span>
+<span>RES2DINV</span>
+<span>Gravity Method</span>
+<span>Magnetic Method</span>
+<span>Remote Sensing</span>
+<span>GIS</span>
+<span>Geological Mapping</span>
+<span>Data Interpretation</span>
+<span>Microsoft Office</span>
+<span>Canva</span>
+<span>Adobe Lightroom</span>
+<span>Basic Programming</span>
+
+</div>
+
 </section>
 
-<section id="contact" class="section dark">
-    <div class="container">
-        <h2>Contact</h2>
+<section id="contact" class="section hidden">
 
-        <p>Email : buge1408@gmail.com</p>
-        <p>Phone : 082273252420</p>
+<h2 class="section-title">Contact</h2>
 
-        <p>
-            LinkedIn :
-            <a href="https://www.linkedin.com/in/mbuge/" target="_blank">
-                linkedin.com/in/mbuge
-            </a>
-        </p>
-    </div>
+<div class="contact">
+
+<p>📧 buge1408@gmail.com</p>
+<p>📱 +62 822-7325-2420</p>
+<p>📍 Aceh Tengah, Indonesia</p>
+<p>💼 linkedin.com/in/mbuge</p>
+
+</div>
+
 </section>
 
 <footer>
-    <p>© 2026 M Buge Munawar</p>
+© 2026 M Buge Munawar
 </footer>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+document.querySelectorAll('.hidden').forEach(el=>{
+observer.observe(el);
+});
+
+</script>
 
 </body>
 </html>
